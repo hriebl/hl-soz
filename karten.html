@@ -308,7 +308,7 @@
     $(var_selector).selectize();
 
     years.forEach(d => add_option(year_selector, d));
-    var_selector.onchange = update_map;
+    year_selector.onchange = update_map;
     $(year_selector).selectize();
 
     total_checkbox.onchange = update_map;
