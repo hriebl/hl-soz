@@ -66,7 +66,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link text-white active" href="#">
+          <a class="nav-link text-white" href="./zeitreihen.html">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">query_stats</i>
             </div>
@@ -84,7 +84,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link text-white" href="./altersstruktur.html">
+          <a class="nav-link text-white active" href="#">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">groups</i>
             </div>
@@ -108,7 +108,7 @@
     <div class="container-fluid py-4">
       <div class="row py-4">
         <div class="col">
-          <h2 class="font-weight-bolder mb-0">Zeitreihen</h2>
+          <h2 class="font-weight-bolder mb-0">Altersstruktur</h2>
         </div>
       </div>
 
@@ -119,80 +119,17 @@
               <div class="icon icon-lg icon-shape shadow shadow-dark border-radius-xl position-absolute mt-n4" style="background-color: rgb(31, 119, 180)">
               </div>
               <div class="text-end pt-1">
-                <p class="mb-0">Zeitreihe 1</p>
+                <p class="mb-0">Geografie</p>
               </div>
             </div>
             <hr class="dark horizontal my-0">
             <div class="card-footer p-3">
-              <select name="var-1" id="select-var-1" class="selectize selectize-var">
-                <option value="einwohner">Einwohner</option>
-              </select>
-              <select name="geo-1" id="select-geo-1" class="selectize selectize-geo">
+              <select name="geo" id="select-geo" class="selectize selectize-geo">
                 <option value="Lübeck (Gesamtstadt)">Lübeck (Gesamtstadt)</option>
               </select>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-sm-6">
-          <div class="card mb-2">
-            <div class="card-header p-3 pt-2">
-              <div class="icon icon-lg icon-shape shadow shadow-dark border-radius-xl position-absolute mt-n4" style="background-color: rgb(255, 127, 14)">
-              </div>
-              <div class="text-end pt-1">
-                <p class="mb-0">Zeitreihe 2</p>
-              </div>
-            </div>
-            <hr class="dark horizontal my-0">
-            <div class="card-footer p-3">
-              <select name="var-2" id="select-var-2" class="selectize selectize-var">
-                <option value="">Variable auswählen</option>
+              <select name="year" id="select-year" class="selectize selectize-year">
+                <option value="2022">2022</option>
               </select>
-              <select name="geo-2" id="select-geo-2" class="selectize selectize-geo">
-                <option value="">Geografie auswählen</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-sm-6">
-          <div class="card mb-2">
-            <div class="card-header p-3 pt-2">
-              <div class="icon icon-lg icon-shape shadow shadow-dark border-radius-xl position-absolute mt-n4" style="background-color: rgb(44, 160, 44)">
-              </div>
-              <div class="text-end pt-1">
-                <p class="mb-0">Zeitreihe 3</p>
-              </div>
-            </div>
-            <hr class="dark horizontal my-0">
-            <div class="card-footer p-3">
-              <select name="var-3" id="select-var-3" class="selectize selectize-var">
-                <option value="">Variable auswählen</option>
-              </select>
-              <select name="geo-3" id="select-geo-3" class="selectize selectize-geo">
-                <option value="">Geografie auswählen</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-sm-6">
-          <div class="card mb-2">
-            <div class="card-header p-3 pt-2">
-              <div class="text-end pt-1">
-                <p class="mb-0">Optionen</p>
-              </div>
-            </div>
-            <hr class="dark horizontal my-0">
-            <div class="card-footer p-3">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="rel-total">
-                <label class="form-check-label" for="flexCheckChecked">Relativ zur Einwohnerzahl</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="rel-start">
-                <label class="form-check-label" for="flexCheckDefault">Relativ zum Startwert</label>
-              </div>
             </div>
           </div>
         </div>
@@ -253,24 +190,12 @@
   <script type="module">
     import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 
-    const data = await d3.csv("./assets/data/hl-soz.csv");
-    const vars = await d3.csv("./assets/data/hl-soz-vars.csv");
+    const data = await d3.csv("./assets/data/hl-soz-age.csv");
     const geo = await d3.csv("./assets/data/hl-soz-geo.csv");
+    const years = await d3.csv("./assets/data/hl-soz-years.csv");
 
-    const var_selectors = [
-      document.getElementById("select-var-1"),
-      document.getElementById("select-var-2"),
-      document.getElementById("select-var-3")
-    ];
-
-    const geo_selectors = [
-      document.getElementById("select-geo-1"),
-      document.getElementById("select-geo-2"),
-      document.getElementById("select-geo-3")
-    ];
-
-    const total_checkbox = document.getElementById("rel-total");
-    const start_checkbox = document.getElementById("rel-start");
+    const geo_selector = document.getElementById("select-geo");
+    const year_selector = document.getElementById("select-year");
     const plot = document.getElementById("plot");
 
     function add_option(sel, d) {
@@ -282,52 +207,59 @@
     }
 
     function update_plot() {
-      const ply_data = [{}, {}, {}];
+      const geo_val = geo_selector.value;
+      const year_val = year_selector.value;
+      if (!geo_val || !year_val) return;
 
-      for (let i = 0; i < 3; i++) {
-        const var_val = var_selectors[i].value;
-        const geo_val = geo_selectors[i].value;
+      const filtered = data.filter(d => d.jahr === year_val && d.raum === geo_val);
 
-        if (!var_val || !geo_val) continue;
+      let men = filtered.filter(d => d.geschlecht === "m")[0];
+      let women = filtered.filter(d => d.geschlecht === "w")[0];
 
-        const filtered = data.filter(d => d.raum === geo_val && d[var_val] !== "null");
-
-        const x = filtered.map(d => +d.jahr);
-        let y = filtered.map(d => +d[var_val]);
-
-        if (total_checkbox.checked) {
-          const total = filtered.map(d => +d.einwohner);
-          y = y.map((val, i) => val / total[i]);
-        }
-
-        if (start_checkbox.checked) {
-          y = y.map(val => val / y[d3.minIndex(x)]);
-        }
-
-        ply_data[i].x = x;
-        ply_data[i].y = y;
-
-        const var_idx = var_selectors[i].selectedIndex;
-        const geo_idx = geo_selectors[i].selectedIndex;
-        const var_nm = var_selectors[i].options[var_idx].innerHTML;
-        const geo_nm = geo_selectors[i].options[geo_idx].innerHTML;
-        ply_data[i].name = var_nm + " in " + geo_nm;
+      for (let k of ["jahr", "raum", "geschlecht"]) {
+        delete men[k];
+        delete women[k];
       }
 
-      let tickformat = ",~r";
+      men = Object.entries(men);
+      women = Object.entries(women);
 
-      if (total_checkbox.checked || start_checkbox.checked) {
-        tickformat = ",~%";
-      }
+      const mx = men.map(([k, v]) => k === "90+" ? +v / 20 : +v);
+      const wx = women.map(([k, v]) => k === "90+" ? -v / 20 : -v);
+
+      const y = men.map(([k, v]) => k === "90+" ? 99.5 : +k);
+      const width = men.map(([k, v]) => k === "90+" ? 20 : 1);
 
       Plotly.react(
         plot,
-        ply_data,
+        [
+          {
+            x: mx,
+            y: y,
+            marker: { color: "powderblue" },
+            name: "Männer",
+            orientation: "h",
+            type: "bar",
+            width: width
+          },
+          {
+            x: wx,
+            y: y,
+            marker: { color: "seagreen" },
+            name: "Frauen",
+            orientation: "h",
+            type: "bar",
+            width: width
+          }
+        ],
         {
+          bargap: 0,
+          barmode: "overlay",
           margin: { t: 0 },
           paper_bgcolor: "rgba(0, 0, 0, 0)",
           plot_bgcolor: "rgba(0, 0, 0, 0)",
-          yaxis: { tickformat: tickformat }
+          xaxis: { title: "Anzahl" },
+          yaxis: { title: "Alter" }
         },
         {
           locale: "de"
@@ -335,20 +267,13 @@
       );
     }
 
-    var_selectors.forEach(function (sel) {
-      vars.forEach(d => add_option(sel, d));
-      sel.onchange = update_plot;
-      $(sel).selectize();
-    });
+    geo.forEach(d => add_option(geo_selector, d));
+    geo_selector.onchange = update_plot;
+    $(geo_selector).selectize();
 
-    geo_selectors.forEach(function (sel) {
-      geo.forEach(d => add_option(sel, d));
-      sel.onchange = update_plot;
-      $(sel).selectize();
-    });
-
-    total_checkbox.onchange = update_plot;
-    start_checkbox.onchange = update_plot;
+    years.forEach(d => add_option(year_selector, d));
+    year_selector.onchange = update_plot;
+    $(year_selector).selectize();
 
     update_plot();
   </script>
