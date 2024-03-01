@@ -335,20 +335,37 @@
       );
     }
 
-    var_selectors.forEach(function (sel) {
+    const url_params = new URLSearchParams(window.location.search);
+
+    var_selectors.forEach(function (sel, i) {
       vars.forEach(d => add_option(sel, d));
       sel.onchange = update_plot;
       $(sel).selectize();
+
+      if (url_params.get("var" + (i + 1))) {
+        $(sel)[0].selectize.setValue(url_params.get("var" + (i + 1)));
+      } else if (i === 0) {
+        $(sel)[0].selectize.setValue("einwohner");
+      }
     });
 
-    geo_selectors.forEach(function (sel) {
+    geo_selectors.forEach(function (sel, i) {
       geo.forEach(d => add_option(sel, d));
       sel.onchange = update_plot;
       $(sel).selectize();
+
+      if (url_params.get("geo" + (i + 1))) {
+        $(sel)[0].selectize.setValue(url_params.get("geo" + (i + 1)));
+      } else if (i === 0) {
+        $(sel)[0].selectize.setValue("Lübeck (Gesamtstadt)");
+      }
     });
 
     total_checkbox.onchange = update_plot;
     start_checkbox.onchange = update_plot;
+
+    total_checkbox.checked = url_params.get("rel-total") === "true" || false;
+    start_checkbox.checked = url_params.get("rel-start") === "true" || false;
 
     update_plot();
   </script>

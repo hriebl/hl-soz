@@ -320,6 +320,10 @@
 
     total_checkbox.onchange = update_map;
 
+    const url_params = new URLSearchParams(window.location.search);
+    $(var_selector)[0].selectize.setValue(url_params.get("var") || "einwohner");
+    $(year_selector)[0].selectize.setValue(url_params.get("year") || "2022");
+    total_checkbox.checked = url_params.get("rel-total") === "true" || false;
     update_map();
   </script>
 </body>
