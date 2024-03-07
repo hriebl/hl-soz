@@ -211,22 +211,12 @@
 
       const filtered = data.filter(d => d.jahr === year_val && d.raum === geo_val);
 
-      let men = filtered.filter(d => d.geschlecht === "m")[0];
-      let women = filtered.filter(d => d.geschlecht === "w")[0];
+      const men = filtered.filter(d => d.geschlecht === "m")[0];
+      const women = filtered.filter(d => d.geschlecht === "w")[0];
 
-      for (let k of ["jahr", "raum", "geschlecht"]) {
-        delete men[k];
-        delete women[k];
-      }
-
-      men = Object.entries(men);
-      women = Object.entries(women);
-
-      const mx = men.map(([k, v]) => k === "90+" ? +v / 20 : +v);
-      const wx = women.map(([k, v]) => k === "90+" ? -v / 20 : -v);
-
-      const y = men.map(([k, v]) => k === "90+" ? 99.5 : +k);
-      const width = men.map(([k, v]) => k === "90+" ? 20 : 1);
+      const mx = Object.entries(men).map(([k, v]) => k == "jahr" ? NaN : +v);
+      const wx = Object.entries(women).map(([k, v]) => k == "jahr" ? NaN : -v);
+      const y = Object.keys(men).map(k => +k);
 
       Plotly.react(
         plot,
@@ -235,22 +225,20 @@
             x: mx,
             y: y,
             hovertemplate: "Alter: %{y}<br>Anzahl: %{x}",
-            marker: { color: "#80b1d3" },
+            marker: { color: "rgb(31, 119, 180)" },
             name: "Männer",
             orientation: "h",
-            type: "bar",
-            width: width
+            type: "bar"
           },
           {
             x: wx,
             y: y,
             customdata: wx.map(x => -x),
             hovertemplate: "Alter: %{y}<br>Anzahl: %{customdata}",
-            marker: { color: "#8dd3c7" },
+            marker: { color: "rgb(255, 127, 14)" },
             name: "Frauen",
             orientation: "h",
-            type: "bar",
-            width: width
+            type: "bar"
           }
         ],
         {
