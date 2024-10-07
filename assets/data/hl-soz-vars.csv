@@ -1,0 +1,32 @@
+label,value
+Einwohner:innen,einwohner
+Kinder und Jugendliche,kinder
+Erwachsene zwischen 18 und 64,erwachsene
+Ältere Personen über 65,aeltere
+Männer,maenner
+Frauen,frauen
+Deutsche,deutsche
+Ausländer:innen,auslaender
+Türk:innen,tuerken
+Syrer:innen,syrer
+Ukrainer:innen,ukrainer
+Pol:innen,polen
+Iraker:innen,iraker
+Afghan:innen,afghanen
+Bulgar:innen,bulgaren
+Rumän:innen,rumaenen
+Russ:innen,russen
+Italiener:innen,italiener
+Haushalte,haushalte
+Einpersonenhaushalte,einpersonenhaushalte
+Paare/Ehepaare ohne Kinder,paare_ohne_kinder
+Paare/Ehepaare mit Kindern,paare_mit_kindern
+Alleinerziehende,alleinerziehende
+Sonstige Haushalte,sonstige_haushalte
+Bezieher:innen von Arbeitslosengeld I,arbeitslosengeld
+Bezieher:innen von Bürgergeld (direkt),buergergeld_direkt
+Bezieher:innen von Bürgergeld (in Bedarfsgemeinschaften),buergergeld_gemeinschaft
+Bezieher:innen von Grundsicherung im Alter/Erwerbsminderung,grundsicherung
+Bezieher:innen von Hilfe zum Lebensunterhalt,lebensunterhalt
+Asylbewerber:innen im Leistungsbezug,asylbewerber
+Personen in der Mindestsicherung,mindestsicherung

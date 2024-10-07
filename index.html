@@ -1,0 +1,245 @@
+<!--
+=========================================================
+* Material Dashboard 2 - v3.1.0
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/material-dashboard
+* Copyright 2023 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://www.creative-tim.com/license)
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="./assets/img/hl/favicon.ico">
+
+  <title>HL Dashboard Soziales</title>
+
+  <!-- Fonts and icons -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+
+  <!-- Nucleo Icons -->
+  <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+  <!-- CSS Files -->
+  <link id="pagestyle" href="./assets/css/material-dashboard.css?v=3.1.0" rel="stylesheet" />
+</head>
+
+<body class="g-sidenav-show bg-gray-100">
+  <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 bg-gradient-dark" id="sidenav-main">
+    <div class="sidenav-header">
+      <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+      <a class="navbar-brand m-0" href="#">
+        <img src="./assets/img/hl/logo.svg" class="navbar-brand-img h-100" alt="main_logo">
+        <span class="ms-1 font-weight-bold text-white">HL Dashboard Soziales</span>
+      </a>
+    </div>
+
+    <hr class="horizontal light mt-0 mb-2">
+
+    <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-white active" href="#">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">dashboard</i>
+            </div>
+            <span class="nav-link-text ms-1">Highlights</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white" href="./zeitreihen.html">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">query_stats</i>
+            </div>
+            <span class="nav-link-text ms-1">Zeitreihen</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white" href="./karten.html">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">map</i>
+            </div>
+            <span class="nav-link-text ms-1">Karten</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white" href="./altersstruktur.html">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">groups</i>
+            </div>
+            <span class="nav-link-text ms-1">Altersstruktur</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">hiking</i>
+            </div>
+            <span class="nav-link-text ms-1">Wanderungen</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="main-content border-radius-lg">
+    <div class="container-fluid py-4">
+      <div class="row py-4">
+        <div class="col">
+          <h2 class="font-weight-bolder mb-0">Highlights</h2>
+        </div>
+      </div>
+
+      <div class="row py-2">
+        <div class="col-lg-3 col-sm-6">
+          <div class="card mb-2">
+            <div class="card-header p-3 pt-2">
+              <div class="icon icon-lg icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-xl mt-n4 position-absolute">
+                <i class="material-icons opacity-10">euro</i>
+              </div>
+              <div class="text-end pt-1">
+                <p class="text-sm mb-0 text-capitalize">Mindestsicherungsquote</p>
+                <h4 class="mb-0">13,94% (2022)</h4>
+              </div>
+            </div>
+            <hr class="dark horizontal my-0">
+            <div class="card-footer p-3">
+              <p class="mb-0">
+                <span class="text-success font-weight-bolder">-10,49%</span> seit 2010<br>
+                <span class="text-success font-weight-bolder">-9.71%</span> in Buntekuh<br>
+                <a href="./zeitreihen.html?var1=mindestsicherung&geo1=L%C3%BCbeck%20(Gesamtstadt)&var2=mindestsicherung&geo2=Buntekuh%20(Stadtteil)&rel-total=true&rel-start=true"><i class="material-icons opacity-10" style="vertical-align: text-bottom;">trending_down</i> Zur Zeitreihe im Detail</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6">
+          <div class="card mb-2">
+            <div class="card-header p-3 pt-2">
+              <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary shadow text-center border-radius-xl mt-n4 position-absolute">
+                <i class="material-icons opacity-10">elderly</i>
+              </div>
+              <div class="text-end pt-1">
+                <p class="text-sm mb-0 text-capitalize">Ältere Personen über 65</p>
+                <h4 class="mb-0">51.182 (2022)</h4>
+              </div>
+            </div>
+            <hr class="dark horizontal my-0">
+            <div class="card-footer p-3">
+              <p class="mb-0">
+                <span class="font-weight-bolder">+0,61%</span> seit 2010<br>
+                <span class="font-weight-bolder">+6,65%</span> in Travemünde<br>
+                <a href="./zeitreihen.html?var1=aeltere&geo1=L%C3%BCbeck%20(Gesamtstadt)&var2=aeltere&geo2=Travemünde%20(Stadtteil)&rel-total=true&rel-start=true"><i class="material-icons opacity-10" style="vertical-align: text-bottom;">trending_up</i> Zur Zeitreihe im Detail</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6">
+          <div class="card mb-2">
+            <div class="card-header p-3 pt-2 bg-transparent">
+              <div class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
+                <i class="material-icons opacity-10">home</i>
+              </div>
+              <div class="text-end pt-1">
+                <p class="text-sm mb-0 text-capitalize">Einpersonenhaushalte</p>
+                <h4 class="mb-0">66.929 (2022)</h4>
+              </div>
+            </div>
+            <hr class="horizontal my-0 dark">
+            <div class="card-footer p-3">
+              <p class="mb-0">
+                <span class="font-weight-bolder">47,95%</span> in der Innenstadt<br>
+                <span class="font-weight-bolder">12,72%</span> in Groß Steinrade<br>
+                <a href="./karten.html?var=einpersonenhaushalte&year=2022&rel-total=true"><i class="material-icons opacity-10" style="vertical-align: text-bottom;">map</i> Zur Karte im Detail</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6">
+          <div class="card">
+            <div class="card-header p-3 pt-2 bg-transparent">
+              <div class="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
+                <i class="material-icons opacity-10">public</i>
+              </div>
+              <div class="text-end pt-1">
+                <p class="text-sm mb-0 text-capitalize">Ausländer:innen</p>
+                <h4 class="mb-0">13,40% (2022)</h4>
+              </div>
+            </div>
+            <hr class="horizontal my-0 dark">
+            <div class="card-footer p-3">
+              <p class="mb-0">
+                <span class="font-weight-bolder">23,24%</span> in Moisling<br>
+                <span class="font-weight-bolder">5,55%</span> im Bezirk Burgtor<br>
+                <a href="./karten.html?var=auslaender&year=2022&rel-total=true"><i class="material-icons opacity-10" style="vertical-align: text-bottom;">map</i> Zur Karte im Detail</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container-fluid py-4">
+        <div class="row py-2">
+          <div class="col">
+            <div class="text-sm text-muted">
+              Entwickelt von <a href="https://github.com/hriebl" target="_blank">@hriebl</a> für die Hansestadt Lübeck,
+              basierend auf dem <a href="https://github.com/creativetimofficial/material-dashboard" target="_blank">Material Dashboard</a>
+              von <a href="https://github.com/creativetimofficial" target="_blank">@creativetimofficial</a>.
+              <strong>Kein offizielles Angebot der Hansestadt Lübeck.</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Core JS Files -->
+  <script src="./assets/js/core/popper.min.js"></script>
+  <script src="./assets/js/core/bootstrap.min.js"></script>
+  <script src="./assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="./assets/js/plugins/smooth-scrollbar.min.js"></script>
+
+  <script>
+    var win = navigator.platform.indexOf("Win") > -1;
+    if (win && document.querySelector("#sidenav-scrollbar")) {
+      var options = {
+        damping: "0.5"
+      }
+      Scrollbar.init(document.querySelector("#sidenav-scrollbar"), options);
+    }
+  </script>
+
+  <!-- Github buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="./assets/js/material-dashboard.min.js?v=3.1.0"></script>
+</body>
+
+</html>

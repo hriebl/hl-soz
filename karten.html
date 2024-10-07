@@ -1,0 +1,327 @@
+<!--
+=========================================================
+* Material Dashboard 2 - v3.1.0
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/material-dashboard
+* Copyright 2023 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://www.creative-tim.com/license)
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="./assets/img/hl/favicon.ico">
+
+  <title>HL Dashboard Soziales</title>
+
+  <!-- Fonts and icons -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+
+  <!-- Nucleo Icons -->
+  <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+  <!-- CSS Files -->
+  <link id="pagestyle" href="./assets/css/material-dashboard.css?v=3.1.0" rel="stylesheet" />
+</head>
+
+<body class="g-sidenav-show bg-gray-100">
+  <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 bg-gradient-dark" id="sidenav-main">
+    <div class="sidenav-header">
+      <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+      <a class="navbar-brand m-0" href="#">
+        <img src="./assets/img/hl/logo.svg" class="navbar-brand-img h-100" alt="main_logo">
+        <span class="ms-1 font-weight-bold text-white">HL Dashboard Soziales</span>
+      </a>
+    </div>
+
+    <hr class="horizontal light mt-0 mb-2">
+
+    <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="./index.html">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">dashboard</i>
+            </div>
+            <span class="nav-link-text ms-1">Highlights</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white" href="./zeitreihen.html">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">query_stats</i>
+            </div>
+            <span class="nav-link-text ms-1">Zeitreihen</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white active" href="#">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">map</i>
+            </div>
+            <span class="nav-link-text ms-1">Karten</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white" href="./altersstruktur.html">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">groups</i>
+            </div>
+            <span class="nav-link-text ms-1">Altersstruktur</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">hiking</i>
+            </div>
+            <span class="nav-link-text ms-1">Wanderungen</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="main-content border-radius-lg">
+    <div class="container-fluid py-4">
+      <div class="row py-4">
+        <div class="col">
+          <h2 class="font-weight-bolder mb-0">Karten</h2>
+        </div>
+      </div>
+
+      <div class="row py-2">
+        <div class="col-lg-3 col-12">
+          <div class="card mb-2">
+            <div class="card-header p-3 pt-2">
+              <div class="icon icon-lg icon-shape shadow shadow-dark border-radius-xl position-absolute mt-n4" style="background-color: rgb(31, 119, 180)">
+              </div>
+              <div class="text-end pt-1">
+                <p class="mb-0">Variable</p>
+              </div>
+            </div>
+            <hr class="dark horizontal my-0">
+            <div class="card-footer p-3">
+              <select name="var" id="select-var" class="selectize selectize-var">
+                <option value="einwohner">Einwohner:innen</option>
+              </select>
+              <select name="year" id="select-year" class="selectize selectize-year">
+                <option value="2022">2022</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="card mb-2">
+            <div class="card-header p-3 pt-2">
+              <div class="text-end pt-1">
+                <p class="mb-0">Optionen</p>
+              </div>
+            </div>
+            <hr class="dark horizontal my-0">
+            <div class="card-footer p-3">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="rel-total">
+                <label class="form-check-label" for="flexCheckChecked">Relativ zur Einwohnerzahl</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-9 col-12">
+          <div id="map" class="rounded" style="width: 100%; height: 650px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container-fluid py-4">
+        <div class="row py-2">
+          <div class="col">
+            <div class="text-sm text-muted">
+              Entwickelt von <a href="https://github.com/hriebl" target="_blank">@hriebl</a> für die Hansestadt Lübeck,
+              basierend auf dem <a href="https://github.com/creativetimofficial/material-dashboard" target="_blank">Material Dashboard</a>
+              von <a href="https://github.com/creativetimofficial" target="_blank">@creativetimofficial</a>.
+              <strong>Kein offizielles Angebot der Hansestadt Lübeck.</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Core JS Files -->
+  <script src="./assets/js/core/popper.min.js"></script>
+  <script src="./assets/js/core/bootstrap.min.js"></script>
+  <script src="./assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="./assets/js/plugins/smooth-scrollbar.min.js"></script>
+
+  <script>
+    var win = navigator.platform.indexOf("Win") > -1;
+    if (win && document.querySelector("#sidenav-scrollbar")) {
+      var options = {
+        damping: "0.5"
+      }
+      Scrollbar.init(document.querySelector("#sidenav-scrollbar"), options);
+    }
+  </script>
+
+  <!-- Github buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="./assets/js/material-dashboard.min.js?v=3.1.0"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/css/selectize.bootstrap5.min.css" integrity="sha512-Ars0BmSwpsUJnWMw+KoUKGKunT7+T8NGK0ORRKj+HT8naZzLSIQoOSIIM3oyaJljgLxFi0xImI5oZkAWEFARSA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/js/selectize.min.js" integrity="sha512-IOebNkvA/HZjMM7MxL0NYeLYEalloZ8ckak+NDtOViP7oiYzG5vn6WVXyrJDiJPhl4yRdmNAG49iuLmhkUdVsQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <style>
+    .leaflet-top {
+      z-index: 999;
+    }
+  </style>
+
+  <script type="module">
+    import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
+
+    const de = d3.formatLocale({
+      decimal: ",",
+      thousands: ".",
+      grouping: [3],
+      currency: ["", "\u00a0€"]
+    });
+
+    const data = await d3.csv("./assets/data/hl-soz.csv");
+    const vars = await d3.csv("./assets/data/hl-soz-vars.csv");
+    const years = await d3.csv("./assets/data/hl-soz-years.csv");
+    const polys_rsp = await fetch("./assets/data/hl-soz-polys.geojson");
+    const polys = await polys_rsp.json();
+
+    const var_selector = document.getElementById("select-var");
+    const year_selector = document.getElementById("select-year");
+    const total_checkbox = document.getElementById("rel-total");
+
+    const map = L.map("map").setView([53.8777, 10.68508], 11);
+
+    L.tileLayer(
+      "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+      {
+        maxZoom: 19,
+        attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>"
+      }
+    )
+    .addTo(map);
+
+    const layers = new L.LayerGroup();
+    layers.addTo(map);
+
+    function add_option(sel, d) {
+      const opt = document.createElement("option");
+      const txt = document.createTextNode(d.label);
+      opt.setAttribute("value", d.value);
+      opt.appendChild(txt);
+      sel.appendChild(opt);
+    }
+
+    function update_map() {
+      layers.clearLayers();
+      map.closePopup();
+
+      const var_val = var_selector.value;
+      const year_val = year_selector.value;
+      if (!var_val || !year_val) return;
+
+      const filtered = data.filter(d => d.jahr === year_val);
+
+      for (let i = 0; i < polys.features.length; i++) {
+        const ft_nm = polys.features[i].properties.name;
+        const ft_dat = filtered.filter(d => d.raum == ft_nm)[0];
+        polys.features[i].properties.value = +ft_dat[var_val];
+
+        if (total_checkbox.checked) {
+          polys.features[i].properties.value /= +ft_dat.einwohner;
+        }
+      }
+
+      const ft_max = d3.max(polys.features.map(f => f.properties.value));
+
+      const var_idx = var_selector.selectedIndex;
+      let var_nm = var_selector.options[var_idx].innerHTML;
+
+      if (total_checkbox.checked) {
+        var_nm += " pro Einwohner";
+      }
+
+      L.geoJSON(
+        polys,
+        {
+          style: function (feature) {
+            return { fillOpacity: feature.properties.value / ft_max * 0.8 }
+          }
+        }
+      )
+      .on(
+        "click",
+        function (event) {
+          const ft_nm = event.layer.feature.properties.name;
+          let ft_val = event.layer.feature.properties.value;
+
+          if (total_checkbox.checked) {
+            ft_val = de.format(",.2%")(ft_val);
+          } else {
+            ft_val = de.format(",~r")(ft_val);
+          }
+
+          L.popup()
+          .setLatLng(event.latlng)
+          .setContent("Bezirk: " + ft_nm + "<br>" + var_nm + ": " + ft_val)
+          .openOn(map);
+        }
+      )
+      .addTo(layers);
+    }
+
+    vars.forEach(d => add_option(var_selector, d));
+    var_selector.onchange = update_map;
+    $(var_selector).selectize();
+
+    years.forEach(d => add_option(year_selector, d));
+    year_selector.onchange = update_map;
+    $(year_selector).selectize();
+
+    total_checkbox.onchange = update_map;
+
+    const url_params = new URLSearchParams(window.location.search);
+    $(var_selector)[0].selectize.setValue(url_params.get("var") || "einwohner");
+    $(year_selector)[0].selectize.setValue(url_params.get("year") || "2022");
+    total_checkbox.checked = url_params.get("rel-total") === "true" || false;
+    update_map();
+  </script>
+</body>
+
+</html>

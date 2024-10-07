@@ -1,0 +1,366 @@
+<!--
+=========================================================
+* Material Dashboard 2 - v3.1.0
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/material-dashboard
+* Copyright 2023 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://www.creative-tim.com/license)
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="./assets/img/hl/favicon.ico">
+
+  <title>HL Dashboard Soziales</title>
+
+  <!-- Fonts and icons -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+
+  <!-- Nucleo Icons -->
+  <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+  <!-- CSS Files -->
+  <link id="pagestyle" href="./assets/css/material-dashboard.css?v=3.1.0" rel="stylesheet" />
+</head>
+
+<body class="g-sidenav-show bg-gray-100">
+  <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 bg-gradient-dark" id="sidenav-main">
+    <div class="sidenav-header">
+      <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+      <a class="navbar-brand m-0" href="#">
+        <img src="./assets/img/hl/logo.svg" class="navbar-brand-img h-100" alt="main_logo">
+        <span class="ms-1 font-weight-bold text-white">HL Dashboard Soziales</span>
+      </a>
+    </div>
+
+    <hr class="horizontal light mt-0 mb-2">
+
+    <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="./index.html">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">dashboard</i>
+            </div>
+            <span class="nav-link-text ms-1">Highlights</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white active" href="#">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">query_stats</i>
+            </div>
+            <span class="nav-link-text ms-1">Zeitreihen</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white" href="./karten.html">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">map</i>
+            </div>
+            <span class="nav-link-text ms-1">Karten</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white" href="./altersstruktur.html">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">groups</i>
+            </div>
+            <span class="nav-link-text ms-1">Altersstruktur</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">hiking</i>
+            </div>
+            <span class="nav-link-text ms-1">Wanderungen</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="main-content border-radius-lg">
+    <div class="container-fluid py-4">
+      <div class="row py-4">
+        <div class="col">
+          <h2 class="font-weight-bolder mb-0">Zeitreihen</h2>
+        </div>
+      </div>
+
+      <div class="row py-2">
+        <div class="col-lg-3 col-12">
+          <div class="card mb-2">
+            <div class="card-header p-3 pt-2">
+              <div class="icon icon-lg icon-shape shadow shadow-dark border-radius-xl position-absolute mt-n4" style="background-color: rgb(31, 119, 180)">
+              </div>
+              <div class="text-end pt-1">
+                <p class="mb-0">Zeitreihe 1</p>
+              </div>
+            </div>
+            <hr class="dark horizontal my-0">
+            <div class="card-footer p-3">
+              <select name="var-1" id="select-var-1" class="selectize selectize-var">
+                <option value="einwohner">Einwohner:innen</option>
+              </select>
+              <select name="geo-1" id="select-geo-1" class="selectize selectize-geo">
+                <option value="Lübeck (Gesamtstadt)">Lübeck (Gesamtstadt)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="card mb-2">
+            <div class="card-header p-3 pt-2">
+              <div class="icon icon-lg icon-shape shadow shadow-dark border-radius-xl position-absolute mt-n4" style="background-color: rgb(255, 127, 14)">
+              </div>
+              <div class="text-end pt-1">
+                <p class="mb-0">Zeitreihe 2</p>
+              </div>
+            </div>
+            <hr class="dark horizontal my-0">
+            <div class="card-footer p-3">
+              <select name="var-2" id="select-var-2" class="selectize selectize-var">
+                <option value="">Variable auswählen</option>
+              </select>
+              <select name="geo-2" id="select-geo-2" class="selectize selectize-geo">
+                <option value="">Geografie auswählen</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="card mb-2">
+            <div class="card-header p-3 pt-2">
+              <div class="icon icon-lg icon-shape shadow shadow-dark border-radius-xl position-absolute mt-n4" style="background-color: rgb(44, 160, 44)">
+              </div>
+              <div class="text-end pt-1">
+                <p class="mb-0">Zeitreihe 3</p>
+              </div>
+            </div>
+            <hr class="dark horizontal my-0">
+            <div class="card-footer p-3">
+              <select name="var-3" id="select-var-3" class="selectize selectize-var">
+                <option value="">Variable auswählen</option>
+              </select>
+              <select name="geo-3" id="select-geo-3" class="selectize selectize-geo">
+                <option value="">Geografie auswählen</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="card mb-2">
+            <div class="card-header p-3 pt-2">
+              <div class="text-end pt-1">
+                <p class="mb-0">Optionen</p>
+              </div>
+            </div>
+            <hr class="dark horizontal my-0">
+            <div class="card-footer p-3">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="rel-total">
+                <label class="form-check-label" for="flexCheckChecked">Relativ zur Einwohnerzahl</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="rel-start">
+                <label class="form-check-label" for="flexCheckDefault">Relativ zum Startwert</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-9 col-12">
+          <div id="plot" class="rounded" style="width: 100%; height: 650px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container-fluid py-4">
+        <div class="row py-2">
+          <div class="col">
+            <div class="text-sm text-muted">
+              Entwickelt von <a href="https://github.com/hriebl" target="_blank">@hriebl</a> für die Hansestadt Lübeck,
+              basierend auf dem <a href="https://github.com/creativetimofficial/material-dashboard" target="_blank">Material Dashboard</a>
+              von <a href="https://github.com/creativetimofficial" target="_blank">@creativetimofficial</a>.
+              <strong>Kein offizielles Angebot der Hansestadt Lübeck.</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Core JS Files -->
+  <script src="./assets/js/core/popper.min.js"></script>
+  <script src="./assets/js/core/bootstrap.min.js"></script>
+  <script src="./assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="./assets/js/plugins/smooth-scrollbar.min.js"></script>
+
+  <script>
+    var win = navigator.platform.indexOf("Win") > -1;
+    if (win && document.querySelector("#sidenav-scrollbar")) {
+      var options = {
+        damping: "0.5"
+      }
+      Scrollbar.init(document.querySelector("#sidenav-scrollbar"), options);
+    }
+  </script>
+
+  <!-- Github buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="./assets/js/material-dashboard.min.js?v=3.1.0"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/css/selectize.bootstrap5.min.css" integrity="sha512-Ars0BmSwpsUJnWMw+KoUKGKunT7+T8NGK0ORRKj+HT8naZzLSIQoOSIIM3oyaJljgLxFi0xImI5oZkAWEFARSA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/js/selectize.min.js" integrity="sha512-IOebNkvA/HZjMM7MxL0NYeLYEalloZ8ckak+NDtOViP7oiYzG5vn6WVXyrJDiJPhl4yRdmNAG49iuLmhkUdVsQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdn.plot.ly/plotly-2.29.1.min.js" charset="utf-8"></script>
+  <script src="https://cdn.plot.ly/plotly-locale-de-2.29.1.js" charset="utf-8"></script>
+
+  <script type="module">
+    import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
+
+    const data = await d3.csv("./assets/data/hl-soz.csv");
+    const vars = await d3.csv("./assets/data/hl-soz-vars.csv");
+    const geo = await d3.csv("./assets/data/hl-soz-geo.csv");
+
+    const var_selectors = [
+      document.getElementById("select-var-1"),
+      document.getElementById("select-var-2"),
+      document.getElementById("select-var-3")
+    ];
+
+    const geo_selectors = [
+      document.getElementById("select-geo-1"),
+      document.getElementById("select-geo-2"),
+      document.getElementById("select-geo-3")
+    ];
+
+    const total_checkbox = document.getElementById("rel-total");
+    const start_checkbox = document.getElementById("rel-start");
+    const plot = document.getElementById("plot");
+
+    function add_option(sel, d) {
+      const opt = document.createElement("option");
+      const txt = document.createTextNode(d.label);
+      opt.setAttribute("value", d.value);
+      opt.appendChild(txt);
+      sel.appendChild(opt);
+    }
+
+    function update_plot() {
+      const ply_data = [{}, {}, {}];
+
+      for (let i = 0; i < 3; i++) {
+        const var_val = var_selectors[i].value;
+        const geo_val = geo_selectors[i].value;
+
+        if (!var_val || !geo_val) continue;
+
+        const filtered = data.filter(d => d.raum === geo_val && d[var_val] !== "null");
+
+        const x = filtered.map(d => +d.jahr);
+        let y = filtered.map(d => +d[var_val]);
+
+        if (total_checkbox.checked) {
+          const total = filtered.map(d => +d.einwohner);
+          y = y.map((val, i) => val / total[i]);
+        }
+
+        if (start_checkbox.checked) {
+          y = y.map(val => val / y[d3.minIndex(x)]);
+        }
+
+        ply_data[i].x = x;
+        ply_data[i].y = y;
+
+        const var_idx = var_selectors[i].selectedIndex;
+        const geo_idx = geo_selectors[i].selectedIndex;
+        const var_nm = var_selectors[i].options[var_idx].innerHTML;
+        const geo_nm = geo_selectors[i].options[geo_idx].innerHTML;
+        ply_data[i].name = var_nm + " in " + geo_nm;
+      }
+
+      let tickformat = ",~r";
+
+      if (total_checkbox.checked || start_checkbox.checked) {
+        tickformat = ",~%";
+      }
+
+      Plotly.react(
+        plot,
+        ply_data,
+        {
+          margin: { t: 0 },
+          paper_bgcolor: "rgba(0, 0, 0, 0)",
+          plot_bgcolor: "rgba(0, 0, 0, 0)",
+          yaxis: { tickformat: tickformat }
+        },
+        {
+          locale: "de"
+        }
+      );
+    }
+
+    const url_params = new URLSearchParams(window.location.search);
+
+    var_selectors.forEach(function (sel, i) {
+      vars.forEach(d => add_option(sel, d));
+      sel.onchange = update_plot;
+      $(sel).selectize();
+
+      if (url_params.get("var" + (i + 1))) {
+        $(sel)[0].selectize.setValue(url_params.get("var" + (i + 1)));
+      } else if (i === 0) {
+        $(sel)[0].selectize.setValue("einwohner");
+      }
+    });
+
+    geo_selectors.forEach(function (sel, i) {
+      geo.forEach(d => add_option(sel, d));
+      sel.onchange = update_plot;
+      $(sel).selectize();
+
+      if (url_params.get("geo" + (i + 1))) {
+        $(sel)[0].selectize.setValue(url_params.get("geo" + (i + 1)));
+      } else if (i === 0) {
+        $(sel)[0].selectize.setValue("Lübeck (Gesamtstadt)");
+      }
+    });
+
+    total_checkbox.onchange = update_plot;
+    start_checkbox.onchange = update_plot;
+
+    total_checkbox.checked = url_params.get("rel-total") === "true" || false;
+    start_checkbox.checked = url_params.get("rel-start") === "true" || false;
+
+    update_plot();
+  </script>
+</body>
+
+</html>
